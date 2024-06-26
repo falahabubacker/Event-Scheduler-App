@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add - Married Everlasting Termite</title>
+    <meta property="og:title" content="Add - Married Everlasting Termite" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background-color: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="/static/style.css" />
+    <div>
+      <link href="/static/add.css" rel="stylesheet" />
+
+      {% if messages %} {% for message in messages %}
+        <div class="alert alert-success" role="alert">
+          {{message}}
+        </div>
+      {% endfor %} {% endif %}
+      <div class="add-container">
+        <div class="add-container01">
+          <div class="add-container02">
+            <button
+              type="button"
+              class="add-button button"
+            >
+              <a href="/" class="add-navlink">
+                <svg viewBox="0 0 877.7142857142857 1024" class="add-icon">
+                  <path
+                    d="M731.429 548.571v-73.143c0-20-16.571-36.571-36.571-36.571h-286.857l108-108c6.857-6.857 10.857-16 10.857-25.714s-4-18.857-10.857-25.714l-52-52c-6.857-6.857-16-10.286-25.714-10.286s-18.857 3.429-25.714 10.286l-258.857 258.857c-6.857 6.857-10.286 16-10.286 25.714s3.429 18.857 10.286 25.714l258.857 258.857c6.857 6.857 16 10.286 25.714 10.286s18.857-3.429 25.714-10.286l52-52c6.857-6.857 10.286-16 10.286-25.714s-3.429-18.857-10.286-25.714l-108-108h286.857c20 0 36.571-16.571 36.571-36.571zM877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"
+                  ></path>
+                </svg>
+              </a>
+            </button>
+            <span class="add-text">Add New Event</span>
+          </div>
+          <form method="POST" class="add-form">
+            {% csrf_token %}
+            <input
+              type="text"
+              name="family_name"
+              placeholder="Family Name"
+              class="add-textinput input"
+            />
+            {% if form.family_name.errors %} <small class="add-text1">{{ form.family_name.errors }}</small class="add-text1"> {% endif %}
+            <div class="add-divider"></div>
+            <input
+              type="text"
+              name="guardian_name"
+              placeholder="Guardian Name"
+              class="add-textinput1 input"
+            />
+            {% if form.guardian_name.errors %} <small class="add-text1">{{ form.guardian_name.errors }}</small class="add-text1"> {% endif %}
+            <input
+              type="text"
+              name="event_type"
+              placeholder="Event Type"
+              class="add-textinput2 input"
+            />
+            {% if form.event_type.errors %} <small class="add-text1">{{ form.event_type.errors }}</small class="add-text1"> {% endif %}
+            <input
+              type="number"
+              name="participants"
+              placeholder="Participants"
+              step="50"
+              max="2000"
+              min="0"
+              class="add-textinput3 input"
+            />
+            {% if form.participants.errors %} <small class="add-text1">{{ form.participants.errors }}</small class="add-text1"> {% endif %}
+            <input
+              type="date"
+              name="date"
+              placeholder="Date"
+              class="add-textinput2 custom_calander input"
+            />
+            {% if form.date.errors %} <small class="add-text1">{{ form.date.errors }}</small class="add-text1"> {% endif %}
+            <div class="add-container03">
+              <div class="add-container04">
+                <label for="from_time" class="add-text2">From&nbsp;</label>
+                <input
+                  type="time"
+                  name="strt_time"
+                  id="from_time"
+                  class="add-textinput3 input"
+                />
+                {% if form.strt_time.errors %} <small class="add-text1">{{ form.strt_time.errors }}</small class="add-text1"> {% endif %}
+              </div>
+              <div class="add-container05">
+                <label for="to_time" class="add-text2">To&nbsp;</label>
+                <input 
+                type="time" 
+                name="end_time"
+                id="to_time"
+                class="add-textinput4 input"
+                />
+                {% if form.end_time.errors %} <small class="add-text1">{{ form.end_time.errors }}</small class="add-text1"> {% endif %}
+              </div>
+            </div>
+            <input
+              type="search"
+              name="time_category"
+              list="time"
+              placeholder="Time"
+              class="add-textinput5 input"
+            />
+            {% if form.errors %} <small class="add-text1">{{ form.time_category.errors }}</small class="add-text1"> {% endif %}
+            <input
+              type="search"
+              name="location"
+              id="location_suggest"
+              list="location"
+              oninput="search(value)"
+              placeholder="Location"
+              class="add-textinput6 input"
+            />
+            {% if form.location.errors %} <small class="add-text1">{{ form.location.errors }}</small class="add-text1"> {% endif %}
+            <div class="add-divider1"></div>
+            <span class="add-text3">Amenities</span>
+            <div class="add-container06">
+              {% for amenity in amenities %}
+                <div class="add-container07">
+                  <input name="amenities" value="{{amenity.id}}" type="checkbox" class="add-checkbox" />
+                  <label class="add-text4">{{amenity.amenity}}</label>
+                </div>
+              {% endfor %}
+            </div>
+            <div class="add-container08">
+              <a href="/" class="add-navlink1 button">Cancel</a>
+              <button type="submit" class="add-button1 button">Save</button>
+            </div>
+          </form>
+        </div>
+        <div class="add-container09">
+          <div class="add-container10">
+            <datalist id="time">
+              <option value="Full day"></option>
+              <option value="Half day (Fore Noon)"></option>
+              <option value="Half day (After Noon)"></option>
+            </datalist>
+
+            <datalist id="event_type">
+              <option value="Marrige"></option>
+              <option value="Reception"></option>
+              <option value="Haldi/Mylanchi"></option>
+              <option value="Other"></option>
+            </datalist>
+
+            <datalist id="location">
+              <option value=""></option>
+            </datalist>
+
+            <script>
+              function search(value) {
+                console.log(`fetch called with value ${value}`);
+                fetch(
+                  `http://dev.virtualearth.net/REST/v1/Autosuggest?query=${value}&maxResults=5&countryFilter=IN&key=AhUSJ1ZzUlmqc0xBJA-JCIot-hSfof_pe0Rg3DClaJ6TZuuvETn_oDuig02yOAfo`
+                )
+                  .then((response) => response.json()) // Parse the response as JSON
+                  .then((data) => {
+                    const addresses =
+                      data.resourceSets?.[0]?.resources?.[0]?.value?.map(
+                        (item) => item.address.formattedAddress
+                      ) || [];
+                    console.log(addresses);
+
+                    // Update the datalist
+                    const datalist = document.getElementById('location');
+                    datalist.innerHTML = ''; // Clear existing options
+                    addresses.forEach((address) => {
+                      const option = document.createElement('option');
+                      option.value = address;
+                      datalist.appendChild(option);
+                    });
+                  })
+                  .catch((err) => console.error('Fetch error:', err));
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  </body>
+</html>
